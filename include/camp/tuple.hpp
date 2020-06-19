@@ -234,6 +234,7 @@ private:
       -> tuple_ebt_t<T, Tuple>&;
 
 public:
+#ifndef __SYCL_DEVICE_ONLY__
   // NOTE: __host__ __device__ on constructors causes warnings, and nothing else
   // Constructors
   template <bool B = concepts::metalib::all_of<
@@ -264,6 +265,7 @@ public:
     base = std::move(rhs.base);
     return *this;
   }
+#endif
 
   template <typename... Args,
             typename std::enable_if<

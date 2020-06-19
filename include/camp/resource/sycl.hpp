@@ -91,7 +91,7 @@ namespace resources
       {
         T *ret = nullptr;
         if (size > 0) {
-          ret = sycl::malloc_device<T>(size, stream); 
+          ret = sycl::malloc_shared<T>(size, stream); 
         }
         return ret;
       }
