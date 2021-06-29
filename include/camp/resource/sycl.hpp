@@ -83,7 +83,7 @@ namespace resources
 
       // Methods
       Platform get_platform() { return Platform::sycl; }
-      static Sycl &get_default()
+      static Sycl get_default()
       {
         static Sycl h;
         return h;
